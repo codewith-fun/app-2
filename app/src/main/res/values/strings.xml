@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">App@2</string>
+
+    <string name="behavior_contents">.behaviour.uc.UcNewsContentBehavior</string>
+    <string name="behavior_uc_header_pager">.behaviour.uc.UcNewsHeaderPagerBehavior</string>
+    <string name="behavior_uc_title">.behaviour.uc.UcNewsTitleBehavior</string>
+    <string name="behavior_uc_news_tab">.behaviour.uc.UcNewsTabBehavior</string>
 </resources>
