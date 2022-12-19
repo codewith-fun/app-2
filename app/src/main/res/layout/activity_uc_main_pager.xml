@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/id_uc_news_header_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_behavior="@string/behavior_uc_header_pager">
+
+<!--        Here we will add search shortcuts and quick links-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxCornerRadiusBottomEnd="25dp"
+                app:boxCornerRadiusBottomStart="25dp"
+                app:boxCornerRadiusTopEnd="25dp"
+                app:boxCornerRadiusTopStart="25dp"
+                >
+
+                <com.mcode.app2.utils.AppEditText
+                    android:id="@+id/tietUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Search Google"
+                    android:drawableRight="@drawable/ic_voice_search"
+                    android:textSize="15sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:backgroundTint="#F9F8FA"
+                android:paddingRight="10dp"
+                android:src="@drawable/ic_voice_search"
+                android:layout_alignParentRight="true"
+                android:id="@+id/button"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_quick_links"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="60dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                />
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/uc_news_header_title_init_offset"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_behavior="@string/behavior_uc_title">
+
+
+
+<!--        Here we will add news APIs for news-->
+        <!--<TextView
+            android:id="@+id/news_title_tv"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="12dip"
+            android:paddingRight="12dip"
+            android:text="@string/app_name"
+            android:textColor="@android:color/white"
+            />
+
+        <ImageView
+            android:id="@+id/iv_github"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dip"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_gravity="end|center_vertical"
+            android:padding="3dip"
+            android:src="@drawable/ic_launcher_foreground"/>-->
+    </FrameLayout>
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/id_uc_news_tab"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/uc_news_tabs_height"
+        android:layout_marginTop="-45dp"
+        android:background="@color/colorPrimary"
+        app:layout_behavior="@string/behavior_uc_news_tab"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="@color/colorPrimaryLight"
+        app:tabSelectedTextColor="@color/colorPrimaryLight"
+        app:tabTextColor="@color/colorPrimaryIcons"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/id_uc_news_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F0F4C3"
+        app:layout_behavior="@string/behavior_contents">
+
+    </androidx.viewpager.widget.ViewPager>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
