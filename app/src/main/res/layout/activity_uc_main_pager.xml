@@ -13,13 +13,54 @@
         app:layout_behavior="@string/behavior_uc_header_pager">
 
 <!--        Here we will add search shortcuts and quick links-->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_quick_links"
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
-            />
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxCornerRadiusBottomEnd="25dp"
+                app:boxCornerRadiusBottomStart="25dp"
+                app:boxCornerRadiusTopEnd="25dp"
+                app:boxCornerRadiusTopStart="25dp"
+                >
+
+                <com.mcode.app2.utils.AppEditText
+                    android:id="@+id/tietUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Search Google"
+                    android:drawableRight="@drawable/ic_voice_search"
+                    android:textSize="15sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:backgroundTint="#F9F8FA"
+                android:paddingRight="10dp"
+                android:src="@drawable/ic_voice_search"
+                android:layout_alignParentRight="true"
+                android:id="@+id/button"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_quick_links"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="60dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                />
+
+        </LinearLayout>
+
 
     </FrameLayout>
 

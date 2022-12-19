@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.annotation.DrawableRes
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.mcode.app2.R
 import com.mcode.app2.databinding.ListQuickLinksBinding
 import java.util.*
@@ -43,6 +44,7 @@ class QuickLinksAdapter(val context: Context, val listeners:ClickOnQuickLinks):R
             with(mData[position]){
                 val data = mData[position]
                 binding.tvTitle.text = data.title
+                Glide.with(context).load(data.ic_image).into(binding.ivQuick)
                 holder.itemView.setOnClickListener { listeners.OnQuickLink(position) }
             }
 
@@ -67,7 +69,7 @@ data class QuickLinks(
      val title:String?=null,
      val description:String?=null,
      val link:String?=null,
-    @DrawableRes private val ic_image:Int
+    @DrawableRes val ic_image:Int
 )
 
 /**
@@ -79,26 +81,26 @@ data class QuickLinks(
 class QuickLinksRepository{
     fun getAllQuickLinks():List<QuickLinks>{
         return listOf(
-            QuickLinks("Google","","https://google.com/", R.drawable.ic_launcher_background),
-            QuickLinks("Yahoo","","https://yahoo.com/", R.drawable.ic_launcher_background),
-            QuickLinks("Gmail","","https://gmail.com/", R.drawable.ic_launcher_background),
-            QuickLinks("YouTube","","https://youtube.com/", R.drawable.ic_launcher_background),
-            QuickLinks("Instagram","","https://instagram.com/", R.drawable.ic_launcher_background),
-            QuickLinks("Facebook","","https://facebook.com/", R.drawable.ic_launcher_background),
+            QuickLinks("Google","","https://google.com/", R.drawable.ic_google),
+            QuickLinks("YouTube","","https://youtube.com/", R.drawable.ic_youtube),
+            QuickLinks("Twitter","","https://twitter.com/", R.drawable.ic_twitter),
+            QuickLinks("Facebook","","https://facebook.com/", R.drawable.ic_facebook),
 
-            QuickLinks("Google","","https://google.com/", R.drawable.ic_launcher_background),
-            QuickLinks("Yahoo","","https://yahoo.com/", R.drawable.ic_launcher_background),
-            QuickLinks("Gmail","","https://gmail.com/", R.drawable.ic_launcher_background),
-            QuickLinks("YouTube","","https://youtube.com/", R.drawable.ic_launcher_background),
-            QuickLinks("Instagram","","https://instagram.com/", R.drawable.ic_launcher_background),
-            QuickLinks("Facebook","","https://facebook.com/", R.drawable.ic_launcher_background),
+            QuickLinks("Google","","https://google.com/", R.drawable.ic_google),
+            QuickLinks("YouTube","","https://youtube.com/", R.drawable.ic_youtube),
+            QuickLinks("Twitter","","https://twitter.com/", R.drawable.ic_twitter),
+            QuickLinks("Facebook","","https://facebook.com/", R.drawable.ic_facebook),
 
-            QuickLinks("Google","","https://google.com/", R.drawable.ic_launcher_background),
-            QuickLinks("Yahoo","","https://yahoo.com/", R.drawable.ic_launcher_background),
-            QuickLinks("Gmail","","https://gmail.com/", R.drawable.ic_launcher_background),
-            QuickLinks("YouTube","","https://youtube.com/", R.drawable.ic_launcher_background),
-            QuickLinks("Instagram","","https://instagram.com/", R.drawable.ic_launcher_background),
-            QuickLinks("Facebook","","https://facebook.com/", R.drawable.ic_launcher_background),
-        )
+            QuickLinks("Google","","https://google.com/", R.drawable.ic_google),
+            QuickLinks("YouTube","","https://youtube.com/", R.drawable.ic_youtube),
+            QuickLinks("Twitter","","https://twitter.com/", R.drawable.ic_twitter),
+            QuickLinks("Facebook","","https://facebook.com/", R.drawable.ic_facebook),
+
+            QuickLinks("Google","","https://google.com/", R.drawable.ic_google),
+            QuickLinks("YouTube","","https://youtube.com/", R.drawable.ic_youtube),
+            QuickLinks("Twitter","","https://twitter.com/", R.drawable.ic_twitter),
+            QuickLinks("Facebook","","https://facebook.com/", R.drawable.ic_facebook),
+
+            )
     }
 }
